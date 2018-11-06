@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatToolbarModule, MatIconModule, MatButtonModule, MatMenuModule } from '@angular/material';
+import { MatToolbarModule, MatButtonToggleModule, MatIconModule, MatButtonModule, MatMenuModule } from '@angular/material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
 
 import { AppComponent } from './app.component';
@@ -10,6 +10,8 @@ import { IssueListComponent } from './issue-list/issue-list.component';
 import { IssueFormComponent } from './issue-form/issue-form.component';
 import { IssueDetailComponent } from './issue-detail/issue-detail.component';
 import { RoutingModule } from './routing/routing.module';
+import { GlinkComponent } from './glink/glink.component';
+import { StatusFilterComponent } from './status-filter/status-filter.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { RoutingModule } from './routing/routing.module';
     MyComponentComponent,
     IssueListComponent,
     IssueFormComponent,
-    IssueDetailComponent
+    IssueDetailComponent,
+    GlinkComponent,
+    StatusFilterComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +29,7 @@ import { RoutingModule } from './routing/routing.module';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatButtonToggleModule,
     MatMenuModule,
     BrowserAnimationsModule,
     RoutingModule

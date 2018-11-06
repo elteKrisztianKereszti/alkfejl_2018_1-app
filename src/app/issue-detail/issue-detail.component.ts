@@ -10,6 +10,7 @@ export class IssueDetailComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }
