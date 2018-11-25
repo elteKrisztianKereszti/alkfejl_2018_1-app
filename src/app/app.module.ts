@@ -12,6 +12,8 @@ import { IssueDetailComponent } from './issue-detail/issue-detail.component';
 import { RoutingModule } from './routing/routing.module';
 import { GlinkComponent } from './glink/glink.component';
 import { StatusFilterComponent } from './status-filter/status-filter.component';
+import { SomeComponent } from './some/some.component';
+import { ExampleChildComponent } from './example-child/example-child.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { StatusFilterComponent } from './status-filter/status-filter.component';
     IssueFormComponent,
     IssueDetailComponent,
     GlinkComponent,
-    StatusFilterComponent
+    StatusFilterComponent,
+    SomeComponent,
+    ExampleChildComponent
   ],
   imports: [
     BrowserModule,
