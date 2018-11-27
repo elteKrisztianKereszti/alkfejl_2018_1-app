@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatToolbarModule, MatButtonToggleModule, MatIconModule, MatButtonModule, MatMenuModule } from '@angular/material';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
+import { MatToolbarModule, MatButtonToggleModule, MatIconModule, MatButtonModule, MatMenuModule,
+         MatFormFieldModule, MatInputModule } from '@angular/material';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MyComponentComponent } from './my-component/my-component.component';
@@ -35,8 +37,11 @@ import { ExampleChildComponent } from './example-child/example-child.component';
     MatButtonModule,
     MatButtonToggleModule,
     MatMenuModule,
+    MatFormFieldModule,
+    MatInputModule,
     BrowserAnimationsModule,
-    RoutingModule
+    RoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
