@@ -10,16 +10,16 @@ import { IssueService } from "../issue.service";
 })
 export class IssueDetailComponent implements OnInit {
 
-  issue: Issue = null;
+  issue: Issue = new Issue();
 
   constructor(
     private route: ActivatedRoute,
     private issueService: IssueService
   ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.issue = this.issueService.getIssue(id);
+    this.issue = await this.issueService.getIssue(id);
   }
 
 }

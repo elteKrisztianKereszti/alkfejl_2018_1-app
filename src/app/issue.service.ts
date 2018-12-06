@@ -1,10 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Issue } from "./issue";
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 
+    'Content-Type': 'application/json',
+    'Authorization': 'Basic YWRtaW46cGFzc3dvcmQ=', // admin/password
+  })
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class IssueService {
+  
+  private issueUrl = 'http://localhost:8080/issues';
 
   issues: Issue[] = [
     {
@@ -33,14 +43,28 @@ export class IssueService {
     },
   ];
   
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
   
-  getIssues() {
-    return this.issues;
+  getIssues(): Promise<Issue[]> {
+    return this.http.get<Issue[]>(`${this.issueUrl}`, httpOptions).toPromise();
   }
   
-  getIssue(id) {
-    return this.issues.find(i => i.id == id);
+  getIssue(id: number): Promise<Issue> {
+    return this.http.get<Issue>(`${this.issueUrl}/${id}`, httpOptions).toPromise();
+  }
+
+  createIssue(issue: Issue): Promise<Issue> {
+    return this.http.post<Issue>(`${this.issueUrl}`, issue, httpOptions).toPromise();
+  }
+
+  updateIssue(issue: Issue): Promise<Issue> {
+    return this.http.put<Issue>(`${this.issueUrl}/${issue.id}`, issue, httpOptions).toPromise();
+  }
+
+  deleteIssue(id): Promise<Issue> {
+    return this.http.delete<Issue>(`${this.issueUrl}/${id}`, httpOptions).toPromise();
   }
 
 }

@@ -4,6 +4,7 @@ import { MatToolbarModule, MatButtonToggleModule, MatIconModule, MatButtonModule
          MatFormFieldModule, MatInputModule } from '@angular/material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from './app.component';
 import { MyComponentComponent } from './my-component/my-component.component';
@@ -41,6 +42,7 @@ import { ExampleChildComponent } from './example-child/example-child.component';
     MatInputModule,
     BrowserAnimationsModule,
     RoutingModule,
+    HttpClientModule,
     FormsModule
   ],
   providers: [],

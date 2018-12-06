@@ -20,6 +20,9 @@
         </a>
       </td>
       <td>{{ issue.status }}</td>
+      <td>
+        <button mat-raised-button color="primary" (click)="onDeleteClick(issue.id)">Delete</button>
+      </td>
     </tr>
   </tbody>
 </table>
