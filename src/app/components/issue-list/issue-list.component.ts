@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IssueService } from "../issue.service"
-import { Issue } from "../issue";  
+import { IssueService } from "../../services/issue.service"
+import { Issue } from "../../entities/issue";
 
 @Component({
   selector: 'app-issue-list',
@@ -45,12 +45,14 @@ export class IssueListComponent implements OnInit {
     if (issue.id > 0) {
       this.selectedIssue.location = issue.location;
       this.selectedIssue.description = issue.description;
+      this.selectedIssue.title = issue.title;
       this.issueService.updateIssue(issue);
     } else {
       this.selectedIssue.id = Math.floor(Math.random()*1000000);
       this.selectedIssue.location = issue.location;
+      this.selectedIssue.title = issue.title;
       this.selectedIssue.description = issue.description;
-      this.selectedIssue.status = 'ADDED';
+      this.selectedIssue.status = 'NEW';
       this.issueService.createIssue(issue)
                       .then(createdIssue => {
                           this.issues.push(createdIssue);

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from "@angular/router";
-import { Issue } from "../issue";
-import { IssueService } from "../issue.service";
+import { Issue } from "../../entities/issue";
+import { IssueService } from "../../services/issue.service";
 
 @Component({
   selector: 'app-issue-detail',

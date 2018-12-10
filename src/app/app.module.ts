@@ -7,28 +7,20 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from './app.component';
-import { MyComponentComponent } from './my-component/my-component.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { IssueListComponent } from './issue-list/issue-list.component';
-import { IssueFormComponent } from './issue-form/issue-form.component';
-import { IssueDetailComponent } from './issue-detail/issue-detail.component';
+import { IssueListComponent } from './components/issue-list/issue-list.component';
+import { IssueFormComponent } from './components/issue-form/issue-form.component';
+import { IssueDetailComponent } from './components/issue-detail/issue-detail.component';
 import { RoutingModule } from './routing/routing.module';
-import { GlinkComponent } from './glink/glink.component';
-import { StatusFilterComponent } from './status-filter/status-filter.component';
-import { SomeComponent } from './some/some.component';
-import { ExampleChildComponent } from './example-child/example-child.component';
+import { StatusFilterComponent } from './components/status-filter/status-filter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyComponentComponent,
     IssueListComponent,
     IssueFormComponent,
     IssueDetailComponent,
-    GlinkComponent,
     StatusFilterComponent,
-    SomeComponent,
-    ExampleChildComponent
   ],
   imports: [
     BrowserModule,
