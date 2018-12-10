@@ -25,6 +25,7 @@ export class IssueFormComponent implements OnInit, OnChanges {
     if (!form.valid) {
       return;
     }
+    console.log(this.model);
     this.onSubmit.emit(this.model);
   }
 }

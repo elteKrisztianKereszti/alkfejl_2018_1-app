@@ -34,6 +34,6 @@ Selected issue: {{ selectedIssue | json }}
 
 <button mat-raised-button color="primary" (click)="onNewClick()">New issue</button>
 
-<div class="col" *ngIf="selectedIssue">
-  <issue-form [issue]="selectedIssue" (onSubmit)="onFormSubmit($event)"></issue-form>
+<div class="col" *ngIf="newIssue">
+  <issue-form (onSubmit)="onFormSubmit($event)"></issue-form>
 </div>

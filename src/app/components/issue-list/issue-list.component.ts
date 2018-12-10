@@ -11,6 +11,7 @@ export class IssueListComponent implements OnInit {
 
   issues: Issue[];
   selectedIssue: Issue;
+  newIssue: Issue;
   filteredIssues: Issue[];
   selectedStatus: string;
   
@@ -42,27 +43,15 @@ export class IssueListComponent implements OnInit {
 
  
   onFormSubmit(issue: Issue) {
-    if (issue.id > 0) {
-      this.selectedIssue.location = issue.location;
-      this.selectedIssue.description = issue.description;
-      this.selectedIssue.title = issue.title;
-      this.issueService.updateIssue(issue);
-    } else {
-      this.selectedIssue.id = Math.floor(Math.random()*1000000);
-      this.selectedIssue.location = issue.location;
-      this.selectedIssue.title = issue.title;
-      this.selectedIssue.description = issue.description;
-      this.selectedIssue.status = 'NEW';
-      this.issueService.createIssue(issue)
-                      .then(createdIssue => {
-                          this.issues.push(createdIssue);
-                        });
-    }
-    this.selectedIssue = null;
+    this.issueService.createIssue(this.newIssue)
+                    .then(createdIssue => {
+                        this.issues.push(createdIssue);
+                      });
+    this.newIssue = null;
   }
 
   onNewClick() {
-    this.selectedIssue = new Issue();
+    this.newIssue = new Issue();
   }
 
 
